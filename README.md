@@ -6,6 +6,13 @@
 
 A powerful, feature-rich React image editor component with comprehensive editing capabilities.
 
+## 🎯 Live Demo
+
+**[Try it now →](http://dkluge.com/bag/image-editor)**
+
+Experience all features including cropping, filters, annotations, stickers, and more!
+
+
 ## ✨ Features
 
 - 🖼️ **Image Editing**: Crop, rotate, flip, and resize images
@@ -35,7 +42,6 @@ pnpm add @dkluge/image-editor
 ```tsx
 import React from 'react'
 import { DkImageEditor } from '@dkluge/image-editor'
-import '@dkluge/image-editor/dist/index.css'
 
 function App() {
   const handleSave = (result) => {
@@ -115,6 +121,23 @@ const customTranslations = {
 />
 ```
 
+## 🔄 State Persistence
+
+```tsx
+// Save editing state for later restoration
+const [savedState, setSavedState] = useState(null)
+
+<DkImageEditor
+  src="image.jpg"
+  initialState={savedState} // Restore previous editing session
+  onConfirm={(result) => {
+    // Save state for next time
+    setSavedState(result.imageState)
+    localStorage.setItem('editorState', JSON.stringify(result.imageState))
+  }}
+/>
+```
+
 ## 📚 API Reference
 
 ### Props
@@ -122,8 +145,10 @@ const customTranslations = {
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `src` | `string \| File \| Blob` | **Required** | Image source (URL, File object, or Blob) |
+| `initialState` | `EditorState` | - | Restore previous editing state |
 | `onSave` | `(result: SaveResult) => void` | **Required** | Callback when user saves the edited image |
 | `onClose` | `() => void` | **Required** | Callback when user closes the editor |
+| `onConfirm` | `(result: ConfirmResult) => void` | - | Callback with canvas and state data |
 | `language` | `'en' \| 'zh' \| string` | `'en'` | Interface language |
 | `translations` | `Translations` | - | Custom translation object |
 | `className` | `string` | `''` | Additional CSS class name |
@@ -132,14 +157,23 @@ const customTranslations = {
 | `annotateTools` | `Array<[string, string]>` | Default tools | Custom annotation tools |
 | `filterOptions` | `Array<[string, string]>` | Default filters | Custom filter options |
 | `finetuneOptions` | `Array<[string, string]>` | Default options | Custom fine-tune controls |
+| `showCloseButton` | `boolean` | `true` | Show/hide close button |
+| `showDownloadButton` | `boolean` | `true` | Show/hide download button |
 
-### SaveResult Object
+### Result Objects
 
 ```typescript
 interface SaveResult {
   src: string        // Blob URL of the edited image
   dest: File         // File object ready for download/upload
-  imageState: object // Complete editor state for restoration
+  imageState: EditorState // Complete editor state for restoration
+}
+
+interface ConfirmResult {
+  src: string        // Blob URL of the edited image
+  dest: File         // File object ready for download/upload
+  imageState: EditorState // Complete editor state for restoration
+  canvas: HTMLCanvasElement // Raw canvas element
 }
 ```
 
@@ -155,12 +189,50 @@ interface SaveResult {
 
 ## 🎯 Examples
 
-Check out the [example directory](./example) for comprehensive usage examples:
+### Basic Implementation
+```tsx
+import { DkImageEditor } from '@dkluge/image-editor'
 
-- **Basic Usage** - Simple implementation
-- **Internationalization** - Multi-language support
-- **Custom Tools** - Tool customization
-- **File Upload** - File handling patterns
+function MyEditor() {
+  return (
+    <div style={{ width: '100vw', height: '100vh' }}>
+      <DkImageEditor
+        src="/path/to/image.jpg"
+        onSave={(result) => {
+          // Download the edited image
+          const link = document.createElement('a')
+          link.href = result.src
+          link.download = 'edited-image.png'
+          link.click()
+        }}
+        onClose={() => console.log('Editor closed')}
+      />
+    </div>
+  )
+}
+```
+
+### Advanced Usage with State Persistence
+```tsx
+function AdvancedEditor() {
+  const [editorState, setEditorState] = useState(null)
+  
+  return (
+    <DkImageEditor
+      src="image.jpg"
+      initialState={editorState}
+      utils={['crop', 'filter', 'annotate']} // Custom tools
+      language="zh" // Chinese interface
+      onConfirm={(result) => {
+        setEditorState(result.imageState) // Save for restoration
+        // Process result.canvas or result.dest
+      }}
+    />
+  )
+}
+```
+
+Check out the [example directory](./example) for more comprehensive examples.
 
 ## 🤝 Contributing
 
