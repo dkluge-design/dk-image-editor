@@ -29,11 +29,11 @@ export interface DkImageEditorProps {
     utils?: string[];
     cropSelectPresetOptions?: Array<[number | undefined, string]>;
     annotateTools?: Array<[string, string]>;
-    stickerEnableSelectImagePreset?: boolean;
     filterOptions?: Array<[string, string]>;
     finetuneOptions?: Array<[string, string]>;
     language?: Language;
     translations?: Translations;
+    showConfirmButton?: boolean;
     showCloseButton?: boolean;
     showDownloadButton?: boolean;
 }
