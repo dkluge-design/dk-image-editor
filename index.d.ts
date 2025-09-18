@@ -1,11 +1,8 @@
-import './styles/DkImageEditor.scss';
-import './styles/filter-preview.css';
-import './styles/frame-panel.css';
 export { default as DkImageEditor } from './DkImageEditor';
 export * from './i18n';
 export type { DkImageEditorProps } from './DkImageEditor';
 export { EditorCore } from './core/EditorCore';
-export type { Annotation, CropState, EditorPlugin, EditorState, Sticker } from './core/EditorCore';
+export type { Annotation, CropState, EditorPlugin, EditorState, Sticker, } from './core/EditorCore';
 export { AnnotatePlugin } from './plugins/AnnotatePlugin';
 export { CropPlugin } from './plugins/CropPlugin';
 export { FilterPlugin } from './plugins/FilterPlugin';
