@@ -1,3 +1,6 @@
+import './styles/DkImageEditor.scss';
+import './styles/filter-preview.css';
+import './styles/frame-panel.css';
 export { default as DkImageEditor } from './DkImageEditor';
 export * from './i18n';
 export type { DkImageEditorProps } from './DkImageEditor';
