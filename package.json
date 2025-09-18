@@ -1,6 +1,6 @@
 {
   "name": "@dkluge/image-editor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "publishConfig": {
     "access": "public"
@@ -9,9 +9,7 @@
   "main": "index.js",
   "module": "index.esm.js",
   "types": "index.d.ts",
-  "files": [
-    "*"
-  ],
+  "files": ["*"],
   "keywords": [
     "react",
     "image-editor",
