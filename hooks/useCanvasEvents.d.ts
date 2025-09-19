@@ -27,10 +27,13 @@ interface UseCanvasEventsProps {
     setActiveTool: (tool: string) => void;
 }
 export declare const useCanvasEvents: ({ canvasRef, activeTool, currentAnnotation, currentSticker, editorRef, cropPluginRef, annotatePluginRef, stickerPluginRef, selectionPluginRef, setHasSelection, setEditingText, setEditingValue, setEditingTextItem, setActiveTool, }: UseCanvasEventsProps) => {
-    handleCanvasMouseDown: (e: React.MouseEvent) => void;
-    handleCanvasMouseMove: (e: React.MouseEvent) => void;
+    handleCanvasMouseDown: (e: React.MouseEvent | React.TouchEvent) => void;
+    handleCanvasMouseMove: (e: React.MouseEvent | React.TouchEvent) => void;
     handleCanvasMouseUp: () => void;
-    handleCanvasDoubleClick: (e: React.MouseEvent) => void;
+    handleCanvasDoubleClick: (e: React.MouseEvent | React.TouchEvent) => void;
+    handleCanvasTouchStart: (e: React.MouseEvent | React.TouchEvent) => void;
+    handleCanvasTouchMove: (e: React.MouseEvent | React.TouchEvent) => void;
+    handleCanvasTouchEnd: () => void;
 };
 export {};
 //# sourceMappingURL=useCanvasEvents.d.ts.map
