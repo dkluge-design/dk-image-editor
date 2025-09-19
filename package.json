@@ -1,0 +1,41 @@
+{
+  "name": "@dkluge/image-editor",
+  "version": "1.0.6",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "A powerful React image editor component with crop, filter, annotate, and sticker features",
+  "main": "index.js",
+  "module": "index.esm.js",
+  "types": "index.d.ts",
+  "files": ["*"],
+  "keywords": [
+    "react",
+    "image-editor",
+    "crop",
+    "filter",
+    "annotate",
+    "sticker",
+    "canvas",
+    "typescript",
+    "photo-editor",
+    "image-processing",
+    "react-component",
+    "ui-component"
+  ],
+  "author": "DKLuge Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dkluge-design/dk-image-editor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dkluge-design/dk-image-editor/issues"
+  },
+  "homepage": "https://github.com/dkluge-design/dk-image-editor#readme"
+}
