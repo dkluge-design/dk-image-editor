@@ -34,6 +34,7 @@ export declare class HtmlSelectionPlugin implements EditorPlugin {
     private createManipulator;
     private showManipulators;
     private hideManipulators;
+    private updateManipulatorPositions;
     private startResize;
     private startRotation;
     private addGlobalListeners;
@@ -43,6 +44,8 @@ export declare class HtmlSelectionPlugin implements EditorPlugin {
     private handleKeyUp;
     private handleGlobalMouseMove;
     private handleGlobalMouseUp;
+    private handleGlobalTouchMove;
+    private handleGlobalTouchEnd;
     handleMouseDown(event: any): void;
     handleMouseMove(event: any): void;
     handleMouseUp(): void;
