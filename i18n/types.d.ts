@@ -1,4 +1,5 @@
 export interface TranslationKeys {
+    'common.cancel': string;
     'header.upload': string;
     'header.undo': string;
     'header.redo': string;
