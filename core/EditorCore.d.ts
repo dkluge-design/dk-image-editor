@@ -60,6 +60,9 @@ interface BaseItem extends Position, CanvasState {
     id: string;
     rotation: number;
     zIndex: number;
+    opacity: number;
+    flipX: boolean;
+    flipY: boolean;
 }
 export interface ImageItem extends BaseItem, Size {
     type: 'image';
@@ -141,7 +144,7 @@ export declare class EditorCore {
     getImageData(): ImageData | null;
     resetToOriginal(): void;
     setImageData(imageData: ImageData): void;
-    export(format?: 'blob' | 'dataURL', customWidth?: number, customHeight?: number): Promise<Blob | string>;
+    export(format?: 'blob' | 'dataURL', customWidth?: number, customHeight?: number, imageFormat?: 'png' | 'jpg' | 'webp' | 'avif' | 'heic'): Promise<Blob | string>;
     private renderToExportCanvas;
     private drawStickerToExport;
     private drawImageToExport;
@@ -155,6 +158,7 @@ export declare class EditorCore {
     moveBackward(itemId: string): void;
     private updateItemZIndex;
     recalculateImageDisplay(): void;
+    private getMimeType;
     destroy(): void;
     private applyCanvasTransformForItem;
     private applyCanvasTransformForItemToExport;

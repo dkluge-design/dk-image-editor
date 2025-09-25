@@ -1,6 +1,7 @@
 export { default as DkImageEditor } from './DkImageEditor';
 export * from './i18n';
 export type { DkImageEditorProps } from './DkImageEditor';
+export type { ExportFormat } from './components/EditorHeader';
 export { EditorCore } from './core/EditorCore';
 export type { Annotation, CropState, EditorPlugin, EditorState, Sticker, } from './core/EditorCore';
 export { AnnotatePlugin } from './plugins/AnnotatePlugin';

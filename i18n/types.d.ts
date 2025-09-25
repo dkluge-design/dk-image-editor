@@ -77,6 +77,9 @@ export interface TranslationKeys {
     'toolbar.fill.color': string;
     'toolbar.stroke.width': string;
     'toolbar.clear.fill': string;
+    'toolbar.opacity': string;
+    'toolbar.flip.horizontal': string;
+    'toolbar.flip.vertical': string;
     'loading.image': string;
     'frame.none': string;
     'frame.solidSharp': string;

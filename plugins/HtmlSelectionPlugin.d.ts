@@ -80,6 +80,8 @@ export declare class HtmlSelectionPlugin implements EditorPlugin {
     updateSelectedItemColors(strokeColor?: string, fillColor?: string): void;
     updateSelectedTextProperties(updatedItem: SelectableItem): void;
     updateSelectedItemStrokeWidth(strokeWidth: number): void;
+    updateSelectedItemOpacity(opacity: number): void;
+    flipSelectedItem(direction: 'horizontal' | 'vertical'): void;
     private transformPoint;
     private getTextWidth;
     private createSelectionBorder;

@@ -1,0 +1,1 @@
+{"version":3,"file":"formatSupport.d.ts","sourceRoot":"","sources":["../../src/utils/formatSupport.ts"],"names":[],"mappings":"AAAA;;GAEG;AACH,qBAAa,aAAa;IACxB,OAAO,CAAC,MAAM,CAAC,YAAY,CAAmC;IAE9D;;OAEG;WACU,iBAAiB,CAAC,MAAM,EAAE,MAAM,GAAG,OAAO,CAAC,OAAO,CAAC;IAsBhE;;OAEG;WACU,mBAAmB,IAAI,OAAO,CAAC,MAAM,EAAE,CAAC;IAarD,OAAO,CAAC,MAAM,CAAC,WAAW;CAU3B"}
