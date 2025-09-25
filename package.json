@@ -1,6 +1,6 @@
 {
   "name": "@dkluge/image-editor",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "type": "module",
   "publishConfig": {
     "access": "public"
