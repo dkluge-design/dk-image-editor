@@ -1,5 +1,8 @@
 export interface TranslationKeys {
     'common.cancel': string;
+    'header.copy': string;
+    'header.copy.success': string;
+    'header.copy.failed': string;
     'header.upload': string;
     'header.undo': string;
     'header.redo': string;

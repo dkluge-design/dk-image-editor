@@ -7,6 +7,7 @@ interface EditorHeaderProps {
     onRedo: () => void;
     onSave: (format?: ExportFormat) => void;
     onUpload?: (file: File) => void;
+    onCopy?: () => void;
     showConfirmButton?: boolean;
     showCloseButton?: boolean;
     showDownloadButton?: boolean;
